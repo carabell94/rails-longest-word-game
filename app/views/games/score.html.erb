@@ -1,0 +1,17 @@
+<h1 id="result" class="text-center">Your result:</h1>
+
+<div class="text-center">
+  <% if @included %>
+    <% if @english_word %>
+      <p><strong>Congratulations!</strong> <%= @word %> is a valid English word!</p>
+    <% else %>
+      <p>Sorry but <strong><%= @word %></strong> does not seem to be a valid English word...</p>
+    <% end %>
+  <% else %>
+    <p>Sorry but <strong><%= @word %></strong> can't be built out of <%= @letters.join(", ") %></p>
+  <% end %>
+</div>
+
+<div id="link" class="text-center">
+  <%= link_to "Play again", new_path %>
+</div>
